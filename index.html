@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeAlpha E-Commerce Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>🛍️ CodeAlpha Store</h1>
+
+    <div class="header-actions">
+        <span id="user-status">Guest</span>
+
+        <button onclick="openAuth()">
+            👤 Login / Register
+        </button>
+
+        <button onclick="showCart()">
+            🛒 Cart (<span id="cart-count">0</span>)
+        </button>
+    </div>
+</header>
+
+<section class="hero">
+    <h2>Welcome to CodeAlpha Store</h2>
+    <p>Quality products at great prices</p>
+</section>
+
+<main>
+    <h2>Our Products</h2>
+
+    <div id="products" class="products"></div>
+</main>
+
+<div id="product-modal" class="modal">
+    <div class="modal-box">
+        <button class="close" onclick="closeProduct()">✖</button>
+
+        <img id="detail-image" class="detail-image">
+
+        <h2 id="detail-name"></h2>
+
+        <h3 id="detail-price"></h3>
+
+        <p id="detail-description"></p>
+
+        <button id="detail-cart-button" class="primary-button">
+            Add to Cart
+        </button>
+    </div>
+</div>
+
+<div id="cart-modal" class="modal">
+    <div class="modal-box">
+        <button class="close" onclick="closeCart()">✖</button>
+
+        <h2>🛒 Shopping Cart</h2>
+
+        <div id="cart-items"></div>
+
+        <h3>Total: ₹<span id="cart-total">0</span></h3>
+
+        <button class="primary-button" onclick="checkout()">
+            Place Order
+        </button>
+    </div>
+</div>
+
+<div id="auth-modal" class="modal">
+    <div class="modal-box auth-box">
+        <button class="close" onclick="closeAuth()">✖</button>
+
+        <h2 id="auth-title">Login</h2>
+
+        <div id="name-field" class="hidden">
+            <input
+                type="text"
+                id="name"
+                placeholder="Full Name"
+            >
+        </div>
+
+        <input
+            type="email"
+            id="email"
+            placeholder="Email"
+        >
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Password"
+        >
+
+        <button class="primary-button" onclick="submitAuth()">
+            <span id="auth-button-text">Login</span>
+        </button>
+
+        <p id="auth-message"></p>
+
+        <button class="switch-button" onclick="toggleAuth()">
+            <span id="switch-text">
+                New user? Create an account
+            </span>
+        </button>
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 CodeAlpha E-Commerce Store</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
